@@ -1,0 +1,101 @@
+Classfile /project/studyJavaMultiply/workspace/firstClass/target/classes/showSynchronizedPrinciple/ShowSynchronizedPrinciple.class
+  Last modified Oct 31, 2017; size 667 bytes
+  MD5 checksum 66d0dde9488870d98d4207f6cb34278f
+  Compiled from "ShowSynchronizedPrinciple.java"
+public class showSynchronizedPrinciple.ShowSynchronizedPrinciple
+  minor version: 0
+  major version: 52
+  flags: ACC_PUBLIC, ACC_SUPER
+Constant pool:
+   #1 = Class              #2             // showSynchronizedPrinciple/ShowSynchronizedPrinciple
+   #2 = Utf8               showSynchronizedPrinciple/ShowSynchronizedPrinciple
+   #3 = Class              #4             // java/lang/Object
+   #4 = Utf8               java/lang/Object
+   #5 = Utf8               <init>
+   #6 = Utf8               ()V
+   #7 = Utf8               Code
+   #8 = Methodref          #3.#9          // java/lang/Object."<init>":()V
+   #9 = NameAndType        #5:#6          // "<init>":()V
+  #10 = Utf8               LineNumberTable
+  #11 = Utf8               LocalVariableTable
+  #12 = Utf8               this
+  #13 = Utf8               LshowSynchronizedPrinciple/ShowSynchronizedPrinciple;
+  #14 = Utf8               main
+  #15 = Utf8               ([Ljava/lang/String;)V
+  #16 = Methodref          #1.#17         // showSynchronizedPrinciple/ShowSynchronizedPrinciple.m:()V
+  #17 = NameAndType        #18:#6         // m:()V
+  #18 = Utf8               m
+  #19 = Utf8               args
+  #20 = Utf8               [Ljava/lang/String;
+  #21 = Utf8               StackMapTable
+  #22 = Class              #20            // "[Ljava/lang/String;"
+  #23 = Class              #24            // java/lang/Class
+  #24 = Utf8               java/lang/Class
+  #25 = Class              #26            // java/lang/Throwable
+  #26 = Utf8               java/lang/Throwable
+  #27 = Utf8               SourceFile
+  #28 = Utf8               ShowSynchronizedPrinciple.java
+{
+  public showSynchronizedPrinciple.ShowSynchronizedPrinciple();
+    descriptor: ()V
+    flags: ACC_PUBLIC
+    Code:
+      stack=1, locals=1, args_size=1
+         0: aload_0
+         1: invokespecial #8                  // Method java/lang/Object."<init>":()V
+         4: return
+      LineNumberTable:
+        line 10: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0       5     0  this   LshowSynchronizedPrinciple/ShowSynchronizedPrinciple;
+
+  public static void main(java.lang.String[]);
+    descriptor: ([Ljava/lang/String;)V
+    flags: ACC_PUBLIC, ACC_STATIC
+    Code:
+      stack=2, locals=2, args_size=1
+         0: ldc           #1                  // class showSynchronizedPrinciple/ShowSynchronizedPrinciple
+         2: dup
+         3: astore_1
+         4: monitorenter(synchronized code depend on this command to entry)
+         5: invokestatic  #16                 // Method m:()V
+         8: aload_1
+         9: monitorexit(synchronized code depend on this command to exit)
+        10: goto          16
+        13: aload_1
+        14: monitorexit
+        15: athrow
+        16: return
+      Exception table:
+         from    to  target type
+             5    10    13   any
+            13    15    13   any
+      LineNumberTable:
+        line 13: 0
+        line 14: 5
+        line 13: 8
+        line 16: 16
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+            0      17     0  args   [Ljava/lang/String;
+      StackMapTable: number_of_entries = 2
+        frame_type = 255 /* full_frame */
+          offset_delta = 13
+          locals = [ class "[Ljava/lang/String;", class java/lang/Class ]
+          stack = [ class java/lang/Throwable ]
+        frame_type = 250 /* chop */
+          offset_delta = 2
+
+  public static synchronized void m();
+    descriptor: ()V
+    flags: ACC_PUBLIC, ACC_STATIC, ACC_SYNCHRONIZED(synchronized method depend on this command)
+    Code:
+      stack=0, locals=0, args_size=0
+         0: return
+      LineNumberTable:
+        line 22: 0
+      LocalVariableTable:
+        Start  Length  Slot  Name   Signature
+}
+SourceFile: "ShowSynchronizedPrinciple.java"
