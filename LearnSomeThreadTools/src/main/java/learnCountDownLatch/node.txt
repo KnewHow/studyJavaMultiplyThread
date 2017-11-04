@@ -1,0 +1,1 @@
+Question:we let main thread wait until all thread executed
