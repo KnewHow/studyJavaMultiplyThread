@@ -1,0 +1,46 @@
+The annotation of ThreadLocal class:
+
+/**
+ * This class provides thread-local variables.  These variables differ from
+ * their normal counterparts　(作用) in that each thread that accesses one (via its
+ * {@code get} or {@code set} method) has its own, independently initialized
+ * copy of the variable.  {@code ThreadLocal} instances are typically private
+ * static fields in classes that wish to associate state with a thread (e.g.,
+ * a user ID or Transaction ID).
+ *
+ * <p>For example, the class below generates unique identifiers local to each
+ * thread.（一般情况下每个线程将会唯一确定某个ThreadLocal）
+ *
+ * A thread's id is assigned the first time it invokes {@code ThreadId.get()}
+ * and remains unchanged on subsequent calls.（在创建线程时，把线程号给设置进去，在子线程的调用中他将保持不变）
+ * <pre>
+ * import java.util.concurrent.atomic.AtomicInteger;
+ *
+ * public class ThreadId {
+ *     // Atomic integer containing the next thread ID to be assigned
+ *     private static final AtomicInteger nextId = new AtomicInteger(0);
+ *
+ *     // Thread local variable containing each thread's ID
+ *     private static final ThreadLocal&lt;Integer&gt; threadId =
+ *         new ThreadLocal&lt;Integer&gt;() {
+ *             &#64;Override protected Integer initialValue() {
+ *                 return nextId.getAndIncrement();
+ *         }
+ *     };
+ *
+ *     // Returns the current thread's unique ID, assigning it if necessary
+ *     public static int get() {
+ *         return threadId.get();
+ *     }
+ * }
+ * </pre>
+ * <p>Each thread holds an implicit(隐式) reference to its copy of a thread-local
+ * variable as long as the thread is alive and the {@code ThreadLocal}
+ * instance is accessible; after a thread goes away, all of its copies of
+ * thread-local instances are subject to garbage collection (unless other
+ * references to these copies exist).
+ * （在线程介绍以后，ThreadLocal里面的内容将会被回收，除非里面的内容的引用还存在）
+ *
+ * @author  Josh Bloch and Doug Lea
+ * @since   1.2
+ */

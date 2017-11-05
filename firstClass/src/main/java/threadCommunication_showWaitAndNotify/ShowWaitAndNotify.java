@@ -1,4 +1,4 @@
-package showWaitAndNotify;
+package threadCommunication_showWaitAndNotify;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
