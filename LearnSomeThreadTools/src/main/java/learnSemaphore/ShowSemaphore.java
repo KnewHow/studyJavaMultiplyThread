@@ -1,7 +1,7 @@
 package learnSemaphore;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.Semaphore;
 
 import threadUtil.ThreadUtils;
@@ -26,23 +26,22 @@ public class ShowSemaphore {
 	private static final Integer MAX_CONCURRENCY_COUNT_AMOUT = 10;
 	
 	
-	/**
-	 * Constructor 30 thread
-	 */
-	private static ExecutorService threadPool = 
-			Executors.newFixedThreadPool(MAX_THREAD_AMOUT);
 	
 	/**
 	 * Make ten thread concurrency at same time
 	 */
-	private static Semaphore semaphore = new Semaphore(MAX_CONCURRENCY_COUNT_AMOUT,true);
+	private static final Semaphore SEMAPHORE = new Semaphore(MAX_CONCURRENCY_COUNT_AMOUT,true);
 	
 	public static void main(String[] args) {
-		for(int i=0;i<MAX_CONCURRENCY_COUNT_AMOUT;i++) {
-			threadPool.execute(new Thread(new showThread(semaphore)));
+		List<Thread> threadList = new ArrayList<Thread>();
+		for(int i=0;i<MAX_THREAD_AMOUT;i++) {
+			Thread thread = new Thread(new showThread(SEMAPHORE));
+			threadList.add(thread);
 		}
-		threadPool.shutdown();
-//		ThreadUtils.sleepSeconds(20);
+		
+		for(Thread t:threadList) {
+			t.start();
+		}
 	}
 	static class showThread implements Runnable{
 		
@@ -58,8 +57,9 @@ public class ShowSemaphore {
 		public void run() {
 			try {
 				this.semaphore.acquire();
-				System.out.println(Thread.currentThread().getName()+" @ executed");
+				System.out.println(Thread.currentThread().getName()+" @ acquire semaphore");
 				ThreadUtils.sleepSeconds(2);
+				System.out.println(Thread.currentThread().getName()+" @ release semaphore");
 				this.semaphore.release();
 			} catch (InterruptedException e) {
 				e.printStackTrace();

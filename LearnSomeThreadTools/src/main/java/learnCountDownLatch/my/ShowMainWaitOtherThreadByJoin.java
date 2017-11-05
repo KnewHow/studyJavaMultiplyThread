@@ -23,7 +23,7 @@ public class ShowMainWaitOtherThreadByJoin {
 			thread.start();
 		}
 		
-		//let main thread wait all thread executed
+		//let main thread wait and make other threads executed
 		for(Thread t:threads) {
 			t.join();
 		}
