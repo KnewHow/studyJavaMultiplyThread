@@ -11,4 +11,11 @@ public class ThreadUtils {
 			e.printStackTrace();
 		}
 	}
+	public static void sleepMillSeconds(long millSeconds) {
+		try {
+			TimeUnit.MILLISECONDS.sleep(millSeconds);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 }
