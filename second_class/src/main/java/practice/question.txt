@@ -1,0 +1,20 @@
+Question:
+There has a 9G file with text,there some prohibited words
+in it. Now we has a prohibited words table,we need to you statistic
+how many times the prohibited works in table appeared in text file.
+(在一个9G的纯文本文件中,有一些违禁词，我们有一个违禁词库，现在让你统计违禁词库里面
+的每个违禁词在文本里面出现了多少次)
+
+算法思路:
+	1.如何去统计在一个纯文本文件中，每个词出现的次数
+		使用正则表达式进行匹配 详情可见StatisticTool 文件
+	2.针对于9G的文件，无法一次性的放入内存(本机内存8G)，该如何进行读取
+		讲9G的文件分为３个３个G的文件，然后分别进行读取，进行计算
+		2.2:误差分析:
+			如果３G来截取文件，那么可能有些违禁词恰好被截开，如“法轮功”
+			第一个文件结尾有“法轮”二字，第二个文件的结尾有“功”字。如果恰好有这样的情况
+			那么从整个文件的大小来看,误差值最多为三。这里先忽略不就这个误差。
+			如果想要减少整个误差，那么解决方法是把内存加大一点，然后整个文件读取
+	
+	３.
+		

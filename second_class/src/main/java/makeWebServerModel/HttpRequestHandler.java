@@ -4,13 +4,10 @@ import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.Closeable;
 import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-
-import threadUtil.ThreadUtils;
 
 /**
  * Http request handler
@@ -39,10 +36,11 @@ public class HttpRequestHandler implements Job {
 		BufferedReader reader = null;
 		PrintWriter out = null;
 		InputStream in = null;
-//		ThreadUtils.sleepMillSeconds(100);
+//		ThreadUtils.sleepSeconds(10);
 		try {
 			reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			String filePath = this.basePath + reader.readLine().split(" ")[1];
+			String head = reader.readLine();
+			String filePath = this.basePath + head.split(" ")[1];
 			out = new PrintWriter(socket.getOutputStream());
 			if (filePath.endsWith("jpg") || filePath.endsWith("ico")) {
 				in = new FileInputStream(filePath);
@@ -83,11 +81,8 @@ public class HttpRequestHandler implements Job {
 		if (closeables != null) {
 			for (Closeable c : closeables) {
 				try {
-					if(c!=null) {
-						c.close();
-					}
-				} catch (IOException e) {
-					e.printStackTrace();
+					c.close();
+				} catch (Exception e) {
 				}
 			}
 		}

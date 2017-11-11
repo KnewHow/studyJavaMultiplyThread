@@ -6,7 +6,7 @@ package makeWebServerModel;
  *
  * @date Nov 8, 2017 7:02:02 PM
  *
- * @param <Job>
+ * @param <StatisticJob>
  */
 public interface ThreadPool {
 	

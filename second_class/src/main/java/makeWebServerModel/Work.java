@@ -35,8 +35,6 @@ public class Work implements Runnable {
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
-			}else {
-				System.out.println(Thread.currentThread().getName()+"job is null");
 			}
 		}
 	}

@@ -12,7 +12,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  *
  * @date Nov 8, 2017 7:24:24 PM
  *
- * @param <Job>
+ * @param <StatisticJob>
  */
 public class DefaultThreadPool implements ThreadPool {
 

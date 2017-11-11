@@ -1,0 +1,11 @@
+Question:
+There has a 9G file with text,there some prohibited words
+in it. Now we has a prohibited words table,we need to you statistic
+how many times the prohibited works in table appeared in text file.
+(在一个9G的纯文本文件中,有一些违禁词，我们有一个违禁词库，现在让你统计违禁
+词库里面
+的每个违禁词在文本里面出现了多少次)
+
+算法思路:
+	1.如何去统计在一个纯文本文件中，每个词出现的次数
+		
