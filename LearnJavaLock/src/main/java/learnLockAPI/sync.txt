@@ -1,0 +1,244 @@
+2017-11-10 20:39:01
+Full thread dump Java HotSpot(TM) 64-Bit Server VM (25.151-b12 mixed mode):
+
+"JMX client heartbeat 3" #63 daemon prio=1 os_prio=0 tid=0x00007f658068f800 nid=0x4551 waiting on condition [0x00007f652986d000]
+   java.lang.Thread.State: TIMED_WAITING (sleeping)
+	at java.lang.Thread.sleep(Native Method)
+	at com.sun.jmx.remote.internal.ClientCommunicatorAdmin$Checker.run(ClientCommunicatorAdmin.java:175)
+	at java.lang.Thread.run(Thread.java:748)
+
+"RMI RenewClean-[127.0.1.1:38459]" #62 daemon prio=1 os_prio=0 tid=0x00007f65809be000 nid=0x454d in Object.wait() [0x00007f652996e000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	- locked <0x00000000fd363450> (a java.lang.ref.ReferenceQueue$Lock)
+	at sun.rmi.transport.DGCClient$EndpointEntry$RenewCleanThread.run(DGCClient.java:563)
+	at java.lang.Thread.run(Thread.java:748)
+
+"pool-3-thread-1" #61 prio=5 os_prio=0 tid=0x00007f65809bd000 nid=0x454b waiting on condition [0x00007f6573afd000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000000fd161690> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+"Inactive RequestProcessor thread [Was:Default RequestProcessor/null]" #60 daemon prio=1 os_prio=0 tid=0x00007f65641f0000 nid=0x44a4 in Object.wait() [0x00007f65a01fc000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1939)
+	- locked <0x00000000fd36ead8> (a java.lang.Object)
+
+"Inactive RequestProcessor thread [Was:Default RequestProcessor/com.sun.tools.visualvm.application.views.threads.ThreadMXBeanDataManager$1]" #59 daemon prio=1 os_prio=0 tid=0x00007f6564140000 nid=0x44a3 in Object.wait() [0x00007f6573dfe000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1939)
+	- locked <0x00000000fd1053a8> (a java.lang.Object)
+
+"Attach Listener" #57 daemon prio=9 os_prio=0 tid=0x00007f6584001000 nid=0x446e waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"RMI Scheduler(0)" #54 daemon prio=1 os_prio=0 tid=0x00007f656414f000 nid=0x4448 waiting on condition [0x00007f6529e72000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000000fd17fe68> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+"GC Daemon" #53 daemon prio=2 os_prio=0 tid=0x00007f6564214000 nid=0x4445 in Object.wait() [0x00007f65730da000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at sun.misc.GC$Daemon.run(GC.java:117)
+	- locked <0x00000000f0eb9d28> (a sun.misc.GC$LatencyLock)
+
+"RMI RenewClean-[127.0.1.1:35130]" #52 daemon prio=1 os_prio=0 tid=0x00007f6564213000 nid=0x4444 in Object.wait() [0x00007f6539514000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	- locked <0x00000000f0ea7548> (a java.lang.ref.ReferenceQueue$Lock)
+	at sun.rmi.transport.DGCClient$EndpointEntry$RenewCleanThread.run(DGCClient.java:563)
+	at java.lang.Thread.run(Thread.java:748)
+
+"pool-2-thread-1" #51 prio=5 os_prio=0 tid=0x00007f6564156800 nid=0x4442 waiting on condition [0x00007f6571dc5000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000000fd181268> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:442)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+
+"Inactive RequestProcessor thread [Was:ThreadsWorker/com.sun.tools.visualvm.application.views.threads.ApplicationThreadsView$MasterViewSupport$3]" #48 daemon prio=1 os_prio=0 tid=0x00007f6560058000 nid=0x443c in Object.wait() [0x00007f652ac8d000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.openide.util.RequestProcessor$Processor.run(RequestProcessor.java:1939)
+	- locked <0x00000000f0c205c0> (a java.lang.Object)
+
+"Timer-0" #32 daemon prio=1 os_prio=0 tid=0x00007f652c00b800 nid=0x8ca in Object.wait() [0x00007f6529f73000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.util.TimerThread.mainLoop(Timer.java:552)
+	- locked <0x00000000f0c210a0> (a java.util.TaskQueue)
+	at java.util.TimerThread.run(Timer.java:505)
+
+"Thread-2" #31 daemon prio=1 os_prio=0 tid=0x00007f652c002800 nid=0x8c9 in Object.wait() [0x00007f652a98a000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at java.util.prefs.AbstractPreferences$EventDispatchThread.run(AbstractPreferences.java:1482)
+	- locked <0x00000000f0357138> (a java.util.LinkedList)
+
+"DestroyJavaVM" #25 prio=5 os_prio=0 tid=0x00007f65b800b000 nid=0x8a2 waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"TimerQueue" #24 daemon prio=5 os_prio=0 tid=0x00007f6564319000 nid=0x8c0 waiting on condition [0x00007f6539815000]
+   java.lang.Thread.State: TIMED_WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000000f0365da0> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+	at java.util.concurrent.DelayQueue.take(DelayQueue.java:223)
+	at javax.swing.TimerQueue.run(TimerQueue.java:174)
+	at java.lang.Thread.run(Thread.java:748)
+
+"File Watcher" #23 daemon prio=1 os_prio=0 tid=0x00007f65600b0800 nid=0x8bc waiting on condition [0x00007f6571bc3000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000000f033e568> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.util.concurrent.LinkedBlockingDeque.takeFirst(LinkedBlockingDeque.java:492)
+	at java.util.concurrent.LinkedBlockingDeque.take(LinkedBlockingDeque.java:680)
+	at sun.nio.fs.AbstractWatchService.take(AbstractWatchService.java:118)
+	at org.netbeans.modules.masterfs.watcher.nio2.NioNotifier.nextEvent(NioNotifier.java:62)
+	at org.netbeans.modules.masterfs.providers.Notifier$1.nextEvent(Notifier.java:89)
+	at org.netbeans.modules.masterfs.watcher.Watcher$Ext.run(Watcher.java:299)
+	at java.lang.Thread.run(Thread.java:748)
+
+"Thread-1" #22 daemon prio=1 os_prio=0 tid=0x00007f65600a9000 nid=0x8bb runnable [0x00007f6571cc4000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.nio.fs.LinuxWatchService.poll(Native Method)
+	at sun.nio.fs.LinuxWatchService.access$600(LinuxWatchService.java:47)
+	at sun.nio.fs.LinuxWatchService$Poller.run(LinuxWatchService.java:314)
+	at java.lang.Thread.run(Thread.java:748)
+
+"AWT-EventQueue-0" #19 prio=6 os_prio=0 tid=0x00007f6564092000 nid=0x8b8 waiting on condition [0x00007f6572546000]
+   java.lang.Thread.State: WAITING (parking)
+	at sun.misc.Unsafe.park(Native Method)
+	- parking to wait for  <0x00000000f003d2f8> (a java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject)
+	at java.util.concurrent.locks.LockSupport.park(LockSupport.java:175)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:2039)
+	at java.awt.EventQueue.getNextEvent(EventQueue.java:554)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:170)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+
+"AWT-Shutdown" #20 prio=5 os_prio=0 tid=0x00007f6564090800 nid=0x8b7 in Object.wait() [0x00007f6572647000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at sun.awt.AWTAutoShutdown.run(AWTAutoShutdown.java:295)
+	- locked <0x00000000f0366430> (a java.lang.Object)
+	at java.lang.Thread.run(Thread.java:748)
+
+"AWT-XAWT" #18 daemon prio=6 os_prio=0 tid=0x00007f656408e800 nid=0x8b6 runnable [0x00007f6572748000]
+   java.lang.Thread.State: RUNNABLE
+	at sun.awt.X11.XToolkit.waitForEvents(Native Method)
+	at sun.awt.X11.XToolkit.run(XToolkit.java:568)
+	at sun.awt.X11.XToolkit.run(XToolkit.java:532)
+	at java.lang.Thread.run(Thread.java:748)
+
+"Java2D Disposer" #16 daemon prio=10 os_prio=0 tid=0x00007f6564071800 nid=0x8b5 in Object.wait() [0x00007f6572849000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	- locked <0x00000000f01eb710> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)
+	at sun.java2d.Disposer.run(Disposer.java:148)
+	at java.lang.Thread.run(Thread.java:748)
+
+"RequestProcessor queue manager" #15 daemon prio=5 os_prio=0 tid=0x00007f6564032000 nid=0x8b4 in Object.wait() [0x00007f6572fd9000]
+   java.lang.Thread.State: TIMED_WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at org.openide.util.RequestProcessor$TickTac.obtainFirst(RequestProcessor.java:2217)
+	- locked <0x00000000f004db50> (a java.lang.Class for org.openide.util.RequestProcessor$TickTac)
+	at org.openide.util.RequestProcessor$TickTac.run(RequestProcessor.java:2193)
+
+"CLI Requests Server" #12 daemon prio=5 os_prio=0 tid=0x00007f65b8489800 nid=0x8b1 runnable [0x00007f65a05cf000]
+   java.lang.Thread.State: RUNNABLE
+	at java.net.PlainSocketImpl.socketAccept(Native Method)
+	at java.net.AbstractPlainSocketImpl.accept(AbstractPlainSocketImpl.java:409)
+	at java.net.ServerSocket.implAccept(ServerSocket.java:545)
+	at java.net.ServerSocket.accept(ServerSocket.java:513)
+	at org.netbeans.CLIHandler$Server.run(CLIHandler.java:1061)
+
+"Active Reference Queue Daemon" #11 daemon prio=1 os_prio=0 tid=0x00007f65b846b000 nid=0x8b0 in Object.wait() [0x00007f65a06d0000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at org.openide.util.lookup.implspi.ActiveQueue.removeBetter(ActiveQueue.java:192)
+	at org.openide.util.lookup.implspi.ActiveQueue.access$400(ActiveQueue.java:24)
+	at org.openide.util.lookup.implspi.ActiveQueue$Daemon.run(ActiveQueue.java:147)
+	- locked <0x00000000f02af200> (a java.lang.ref.ReferenceQueue$Lock)
+
+"Service Thread" #8 daemon prio=9 os_prio=0 tid=0x00007f65b82bf800 nid=0x8ae runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C1 CompilerThread2" #7 daemon prio=9 os_prio=0 tid=0x00007f65b82a2800 nid=0x8ad waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread1" #6 daemon prio=9 os_prio=0 tid=0x00007f65b82a0800 nid=0x8ac waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"C2 CompilerThread0" #5 daemon prio=9 os_prio=0 tid=0x00007f65b829d800 nid=0x8ab waiting on condition [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Signal Dispatcher" #4 daemon prio=9 os_prio=0 tid=0x00007f65b829c800 nid=0x8aa runnable [0x0000000000000000]
+   java.lang.Thread.State: RUNNABLE
+
+"Finalizer" #3 daemon prio=8 os_prio=0 tid=0x00007f65b826a800 nid=0x8a9 in Object.wait() [0x00007f65a82f1000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+	- locked <0x00000000f0058d58> (a java.lang.ref.ReferenceQueue$Lock)
+	at java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:164)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Finalizer.java:209)
+
+"Reference Handler" #2 daemon prio=10 os_prio=0 tid=0x00007f65b8266000 nid=0x8a8 in Object.wait() [0x00007f65a83f2000]
+   java.lang.Thread.State: WAITING (on object monitor)
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Object.java:502)
+	at java.lang.ref.Reference.tryHandlePending(Reference.java:191)
+	- locked <0x00000000f0058f10> (a java.lang.ref.Reference$Lock)
+	at java.lang.ref.Reference$ReferenceHandler.run(Reference.java:153)
+
+"VM Thread" os_prio=0 tid=0x00007f65b825e000 nid=0x8a7 runnable 
+
+"GC task thread#0 (ParallelGC)" os_prio=0 tid=0x00007f65b8020800 nid=0x8a3 runnable 
+
+"GC task thread#1 (ParallelGC)" os_prio=0 tid=0x00007f65b8022000 nid=0x8a4 runnable 
+
+"GC task thread#2 (ParallelGC)" os_prio=0 tid=0x00007f65b8024000 nid=0x8a5 runnable 
+
+"GC task thread#3 (ParallelGC)" os_prio=0 tid=0x00007f65b8025800 nid=0x8a6 runnable 
+
+"VM Periodic Task Thread" os_prio=0 tid=0x00007f65b82c3000 nid=0x8af waiting on condition 
+
+JNI global references: 974
+
