@@ -1,11 +1,13 @@
 package second_class.practce.test;
 
+import java.util.List;
 import java.util.Random;
 
 import org.junit.Test;
 
-import practice.CreateWordHelper;
 import practice.StatisticTool;
+import practice.createFile.CreateWordHelper;
+import practice.createFile.QueryBannedWord;
 
 public class FindWordAppearTimeTest {
 
@@ -52,5 +54,28 @@ public class FindWordAppearTimeTest {
 				System.out.println("yes");
 			}
 		}
+	}
+	
+	@Test
+	public void testGetRandomBannedWordList() {
+		List<String> bannedWordList = QueryBannedWord.getRandomBannedWordList();
+		System.out.println(bannedWordList.size());
+		System.out.println(bannedWordList.toString());
+	}
+	
+	@Test
+	public void testCreateWordHelper() {
+		CreateWordHelper helper = new CreateWordHelper();
+		String str = helper.createTargetFileWord();
+		System.out.println(str);
+	}
+	
+	/**
+	 * /project/studyJavaMultiply/workspace/second_class/target/test-classes/
+	 */
+	@Test
+	public void testFindClasspathRoot() {
+		String path = this.getClass().getResource("/test.txt").getPath();
+		System.out.println(path);
 	}
 }
