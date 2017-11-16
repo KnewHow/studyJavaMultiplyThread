@@ -12,6 +12,12 @@ import java.util.Random;
  *
  */
 public class CreateWordHelper {
+	
+	
+	/**
+	 * The banned word list
+	 */
+	private static volatile List<String> bannedWordList=null;
 
 
 	/**
@@ -101,7 +107,7 @@ public class CreateWordHelper {
 	 * @return
 	 */
 	public String createTargetFileWord() {
-		List<String> bannedWordList = QueryBannedWord.getRandomBannedWordList();
+		getBannedWordList();
 		Random random = new Random();
 		int number = random.nextInt(10000);
 		if (number < 3000) {
@@ -110,6 +116,21 @@ public class CreateWordHelper {
 			return addLineBetweenWord(createRandomChinesWord());
 		} else {
 			return addLineBetweenWord(bannedWordList.get(random.nextInt(100)));
+		}
+	}
+	
+	/**
+	 * Initialize banned word list,in all
+	 */
+	public void getBannedWordList(){
+		if(bannedWordList==null) {
+			synchronized (CreateWordHelper.class) {
+				if(bannedWordList==null) {
+					bannedWordList = QueryBannedWord.getRandomBannedWordList();
+				}
+			}
+		}else {
+			return;
 		}
 	}
 

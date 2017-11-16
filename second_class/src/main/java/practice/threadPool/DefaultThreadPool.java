@@ -20,7 +20,7 @@ public class DefaultThreadPool implements ThreadPool {
 	/**
 	 * The maximal thread worker number the thread pool setting
 	 */
-	private static final Integer MAX_WORKER_THREAD_NUMBER = 10;
+	private static final Integer MAX_WORKER_THREAD_NUMBER = 100;
 	/**
 	 * The default thread worker number the thread pool setting
 	 */
@@ -108,7 +108,7 @@ public class DefaultThreadPool implements ThreadPool {
 		for (int i = 0; i < num; i++) {
 			Work work = new Work(this.jobs);
 			this.workers.add(work);
-			Thread thread = new Thread(work, "Thread-worker-" + this.threadsId.incrementAndGet());
+			Thread thread = new Thread(work, "Thread-writer" + this.threadsId.incrementAndGet());
 			thread.start();
 		}
 		this.threadNumber += num;
